@@ -1,0 +1,33 @@
+{
+    "name": "dcvn/otp-laravel",
+    "description": "Laravel layer for local OTP authentication",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeroen van der Sande",
+            "email": "jeroen@dcvn.nl"
+        }
+    ],
+    "require": {
+        "robthree/twofactorauth": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dcvn\\Otp\\": "src/"
+        },
+        "files": [
+            "lib/phpqrcode/phpqrcode.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dcvn\\Otp\\Providers\\OtpServiceProvider"
+            ],
+            "aliases": {
+                "OneTimePassword": "Dcvn\\Otp\\OneTimePassword"
+            }
+        }
+    }
+}
